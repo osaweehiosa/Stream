@@ -1,0 +1,81 @@
+:root {
+    --bg-color: #0b0f1a;
+    --card-bg: #161b28;
+    --primary-green: #50b487;
+    --primary-blue: #3498db;
+    --text-main: #ffffff;
+    --text-dim: #8a8f9d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; }
+.app-container { padding: 20px; padding-bottom: 120px; max-width: 480px; margin: auto; }
+
+/* Header */
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.status span { color: #f1c40f; font-weight: bold; }
+.profile-circle { width: 42px; height: 42px; background: #2c3e50; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+
+/* Ticker */
+.ticker-wrap { background: rgba(255,255,255,0.03); padding: 10px 0; margin-bottom: 20px; overflow: hidden; white-space: nowrap; border-radius: 10px; }
+.ticker { display: inline-block; animation: ticker 30s linear infinite; color: var(--primary-green); font-size: 0.8rem; }
+@keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+/* Balance Card */
+.balance-card { background: linear-gradient(145deg, #1a2235, #121724); padding: 25px; border-radius: 25px; text-align: center; margin-bottom: 25px; }
+.balance-card h1 { font-size: 2.5rem; margin: 15px 0; }
+.action-buttons { display: flex; gap: 12px; }
+.btn { flex: 1; padding: 14px; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-topup { background: var(--primary-green); color: white; }
+.btn-withdraw { background: #262c3d; color: white; }
+
+/* Hub Grid */
+.section-header { display: flex; justify-content: space-between; margin-bottom: 12px; }
+.view-all { color: var(--primary-green); text-decoration: none; font-size: 0.85rem; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.card { background: var(--card-bg); padding: 18px; border-radius: 20px; position: relative; cursor: pointer; }
+.lock-icon { position: absolute; top: 12px; right: 12px; color: #333; font-size: 0.75rem; }
+.icon-box { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.music { background: rgba(155, 89, 182, 0.1); color: #9b59b6; }
+.tiktok { background: rgba(231, 76, 60, 0.1); color: #e74c3c; }
+.bazaar { background: rgba(230, 126, 34, 0.1); color: #e67e22; }
+.academy { background: rgba(52, 152, 219, 0.1); color: #3498db; }
+
+/* Daily Activity & Spin */
+.activity-card { background: var(--card-bg); padding: 20px; border-radius: 22px; margin-bottom: 15px; cursor: pointer; }
+.activity-content { display: flex; align-items: center; gap: 15px; }
+.progress-container { position: relative; width: 70px; height: 70px; }
+.progress-ring__circle { 
+    stroke-dasharray: 188.4; stroke-dashoffset: 140; transform-origin: center; 
+    animation: rotateCircle 2.5s linear infinite; 
+}
+@keyframes rotateCircle { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.progress-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: bold; font-size: 0.8rem; }
+
+/* Invite Card */
+.invite-card { background: linear-gradient(90deg, #0d1a15, #161b28); padding: 18px; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; border-left: 3px solid var(--primary-green); cursor: pointer; }
+.green-title { color: var(--primary-green); font-size: 1rem; }
+.share-icon-box { background: rgba(80, 180, 135, 0.1); color: var(--primary-green); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+
+/* Navigation */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #070a12; display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid #1a1a1a; }
+.nav-item { text-align: center; color: var(--text-dim); font-size: 0.7rem; cursor: pointer; }
+.nav-item i { display: block; font-size: 1.2rem; margin-bottom: 4px; }
+.nav-item.active { color: var(--primary-green); }
+
+/* Popup (Modal) */
+.modal-overlay { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; 
+}
+.modal-content { background: #1c2435; width: 90%; max-width: 380px; padding: 35px 25px; border-radius: 20px; text-align: center; position: relative; border: 1px solid rgba(255,255,255,0.05); }
+.close-btn { position: absolute; top: 15px; right: 20px; color: #8a8f9d; font-size: 1.5rem; cursor: pointer; }
+.lock-circle { width: 65px; height: 65px; background: rgba(52,152,219,0.1); border: 2px solid rgba(52,152,219,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-blue); font-size: 1.8rem; margin: 0 auto 20px; }
+.modal-title { margin-bottom: 12px; }
+.modal-description { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; margin-bottom: 25px; }
+.btn-activate { width: 100%; padding: 16px; background: var(--primary-blue); color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+
+/* Toasts */
+#notification-container { position: fixed; top: 15px; right: 15px; z-index: 3000; }
+.toast { background: #1c2435; padding: 10px 18px; border-radius: 10px; margin-bottom: 8px; border-left: 4px solid var(--primary-green); animation: slideIn 0.4s ease; font-size: 0.8rem; }
+@keyframes slideIn { from { transform: translateX(120%); } to { transform: translateX(0); } }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Create Account</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <div class="signup-container">
+        <nav class="top-nav">
+            <a href="index.html" class="back-link">
+                <span class="arrow">←</span> Back
+            </a>
+        </nav>
+
+        <div class="header">
+            <div class="logo-circle">
+                <span class="logo-icon"> <img src="logo.png.png" width="40px" alt=""> </span>
+            </div>
+            <h1>Create your account</h1>
+            <p>Join the movement. Start your earning journey.</p>
+        </div>
+
+        <form id="signupForm">
+            <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Name@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+234" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="********" required>
+                    <span class="toggle-password" id="eyeIcon">👁</span>
+                </div>
+            </div>
+
+            
+            <button type="submit" class="payment-btn">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

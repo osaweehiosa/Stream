@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Payment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0a0e17; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; min-h-screen; padding: 1rem; }
+        .card-shadow { box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .account-card { transition: all 0.2s ease-in-out; cursor: pointer; border-width: 2px; }
+        .selected-card { border-color: #3b82f6; background-color: #eff6ff; }
+        .unselected-card { border-color: #f3f4f6; background-color: #f9fafb; }
+        
+        /* Smooth Spinner Animation */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <div class="bg-white rounded-3xl overflow-hidden w-full max-w-md card-shadow">
+        
+        <div class="bg-[#4ea8de] text-white py-8 text-center">
+            <h1 class="text-2xl font-bold">Complete Activation</h1>
+            <p class="text-sm opacity-80 mt-1">Unlock Lifetime Access</p>
+        </div>
+
+        <div class="p-6">
+            <div class="bg-gray-50 rounded-2xl p-4 flex justify-between items-center mb-6 border border-gray-100">
+                <span class="text-gray-500 font-medium">Amount to Pay</span>
+                <span class="text-[#3b82f6] text-2xl font-black">₦12,000</span>
+            </div>
+
+            <div class="flex bg-gray-100 p-1.5 rounded-xl mb-6">
+                <button id="btn-bank" onclick="switchMainTab('bank')" class="flex-1 py-2.5 rounded-lg font-bold transition-all bg-white text-[#3b82f6] shadow-sm">
+                    Bank Transfer
+                </button>
+                <button id="btn-opay" onclick="switchMainTab('opay')" class="flex-1 py-2.5 rounded-lg font-bold transition-all text-gray-400 hover:text-gray-600">
+                    Opay
+                </button>
+            </div>
+
+            <p id="instruction-text" class="text-center text-gray-400 text-sm mb-6 px-2">
+                Click on a bank account to select it, then make the transfer.
+            </p>
+
+            <div id="bank-content" class="space-y-4">
+                <div id="card-1" onclick="selectAccount('card-1')" class="account-card unselected-card rounded-2xl p-4 relative">
+                    <div id="badge-1" class="hidden absolute top-4 right-4 bg-[#3b82f6] text-white text-[10px] px-2.5 py-1 rounded-md font-bold flex items-center gap-1">
+                        <i class="fas fa-check text-[8px]"></i> SELECTED
+                    </div>
+                    <span class="text-[10px] text-gray-400 uppercase font-black tracking-widest">Bank Name</span>
+                    <p class="font-bold text-gray-800 text-lg">Moniepoint MFB</p>
+                    <span class="text-[10px] text-gray-400 uppercase font-black tracking-widest mt-3 block">Account Number</span>
+                    <div class="flex justify-between items-center">
+                        <p id="acc-num-1" class="text-[#3b82f6] text-2xl font-bold tracking-wider">7010661707</p>
+                        <button onclick="copyText('7010661707')" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-400 hover:text-blue-500 transition-colors">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <span class="text-[10px] text-gray-400 uppercase font-black tracking-widest mt-3 block">Account Name</span>
+                    <p class="text-gray-700 font-medium">Chimezie David Igwe</p>
+                </div>
+
+                <div id="card-2" onclick="selectAccount('card-2')" class="account-card unselected-card rounded-2xl p-4 relative">
+                    <div id="badge-2" class="hidden absolute top-4 right-4 bg-[#3b82f6] text-white text-[10px] px-2.5 py-1 rounded-md font-bold flex items-center gap-1">
+                        <i class="fas fa-check text-[8px]"></i> SELECTED
+                    </div>
+                    <span class="text-[10px] text-gray-400 uppercase font-black tracking-widest">Bank Name</span>
+                    <p class="font-bold text-gray-800 text-lg">Moniepoint MFB</p>
+                    <span class="text-[10px] text-gray-400 uppercase font-black tracking-widest mt-3 block">Account Number</span>
+                    <div class="flex justify-between items-center">
+                        <p class="text-gray-800 text-2xl font-bold tracking-wider opacity-60">7010661707</p>
+                        <button onclick="copyText('7010661707')" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-400"><i class="far fa-copy"></i></button>
+                    </div>
+                    <span class="text-[10px] text-gray-400 uppercase font-black tracking-widest mt-3 block">Account Name</span>
+                    <p class="text-gray-700 font-medium">Chimezie David Igwe (Backup)</p>
+                </div>
+            </div>
+
+            <div id="opay-content" class="hidden">
+                <div class="border-2 border-dashed border-gray-200 rounded-2xl p-10 text-center bg-gray-50">
+                    <div class="w-16 h-16 bg-[#00d08420] text-[#00d084] rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <p class="text-gray-600 font-bold">Pay with OPay Wallet</p>
+                    <p class="text-xs text-gray-400 mt-1">Automatic verification via OPay app</p>
+                    <button class="mt-6 bg-[#00d084] hover:bg-[#00b372] text-white px-8 py-3 rounded-xl font-bold transition-all">Open OPay App</button>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-100 pt-6">
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-4 flex gap-3 mb-6">
+                    <i class="fas fa-info-circle text-amber-500 mt-0.5"></i>
+                    <p class="text-[11px] text-amber-800 leading-relaxed font-medium">
+                        Ensure you transfer the exact amount. Verification usually takes 1-3 minutes after clicking the button below.
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-3 mb-6 px-1">
+    <input 
+        type="checkbox" 
+        id="confirm-check" 
+        onchange="if(this.checked) window.location.href='final.html'" 
+        class="w-5 h-5 rounded border-gray-300 text-[#4ea8de] focus:ring-[#4ea8de] cursor-pointer"
+    >
+    <label for="confirm-check" class="text-xs text-gray-500 font-medium cursor-pointer">
+        I have completed this transfer
+    </label>
+</div>
+                <button id="transfer-btn" disabled onclick="handleTransferSimulation()" 
+                    class="w-full bg-gray-200 text-gray-400 font-bold py-4 rounded-2xl transition-all cursor-not-allowed">
+                    I Have Made The Transfer
+                </button>
+
+                <div class="text-center mt-6">
+    <a href="pay.html" class="text-gray-400 text-sm font-bold hover:text-gray-600 transition-colors">
+        Cancel and Go Back
+    </a>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSelectedAccount = null;
+
+        function switchMainTab(type) {
+            const bankBtn = document.getElementById('btn-bank');
+            const opayBtn = document.getElementById('btn-opay');
+            const bankContent = document.getElementById('bank-content');
+            const opayContent = document.getElementById('opay-content');
+
+            if (type === 'bank') {
+                bankBtn.className = "flex-1 py-2.5 rounded-lg font-bold transition-all bg-white text-[#3b82f6] shadow-sm";
+                opayBtn.className = "flex-1 py-2.5 rounded-lg font-bold transition-all text-gray-400";
+                bankContent.classList.remove('hidden');
+                opayContent.classList.add('hidden');
+            } else {
+                opayBtn.className = "flex-1 py-2.5 rounded-lg font-bold transition-all bg-white text-[#3b82f6] shadow-sm";
+                bankBtn.className = "flex-1 py-2.5 rounded-lg font-bold transition-all text-gray-400";
+                opayContent.classList.remove('hidden');
+                bankContent.classList.add('hidden');
+            }
+            validateForm();
+        }
+
+        function selectAccount(id) {
+            currentSelectedAccount = id;
+            document.querySelectorAll('.account-card').forEach(card => {
+                card.classList.replace('selected-card', 'unselected-card');
+                const badgeId = 'badge-' + card.id.split('-')[1];
+                document.getElementById(badgeId).classList.add('hidden');
+            });
+
+            const activeCard = document.getElementById(id);
+            activeCard.classList.replace('unselected-card', 'selected-card');
+            document.getElementById('badge-' + id.split('-')[1]).classList.remove('hidden');
+            
+            validateForm();
+        }
+
+        function validateForm() {
+            const isChecked = document.getElementById('confirm-check').checked;
+            const btn = document.getElementById('transfer-btn');
+            const isBankTab = !document.getElementById('bank-content').classList.contains('hidden');
+
+            if (isChecked && (currentSelectedAccount || !isBankTab)) {
+                btn.disabled = false;
+                btn.className = "w-full bg-[#4ea8de] hover:bg-[#3b96cc] text-white font-bold py-4 rounded-2xl shadow-lg transition-all active:scale-[0.98] cursor-pointer";
+            } else {
+                btn.disabled = true;
+                btn.className = "w-full bg-gray-200 text-gray-400 font-bold py-4 rounded-2xl transition-all cursor-not-allowed";
+            }
+        }
+
+        function handleTransferSimulation() {
+            const btn = document.getElementById('transfer-btn');
+            btn.disabled = true;
+            btn.innerHTML = `<span class="spinner"></span> Sensing Transaction...`;
+            
+            // Simulating the "Sensing" logic
+            setTimeout(() => {
+                // In a real app, you'd check a database/API here.
+                // We'll simulate a redirect to a verification page.
+                alert("Transaction sensing initiated. We are checking your payment status with Moniepoint.");
+                window.location.href = "success-page.html"; // Replace with your actual next page
+            }, 3000);
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert("Account number copied: " + text);
+        }
+    </script>
+</body>
+</html>

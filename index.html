@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Africa </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-icon"><img src="logo.png.png" width="20px" alt=""></div> 
+            <span class="brand-name">Stream</span>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#collab-container">Features</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#faq">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="hero">
+        <h1>Life in Motion. <span class="highlight">Income in Continuous Flow.</span></h1>
+        <p class="hero-subtext">This is more than a brand. This is the movement redefining the digital economy in 2026. Welcome to Stream Africa.</p>
+        <div class="cta-buttons">
+            <a href="sign.html" class="btn btn-primary">Start Earning Now &rarr;</a>
+            <a href="#vision" class="btn btn-secondary">Learn More</a>
+        </div>
+    </header>
+
+    <section class="features-grid">
+        <div class="feature-item"><div class="icon-box"><span class="material-icons">check_circle</span></div><h3>CAC Verified</h3><p>FULLY REGISTERED</p></div>
+        <div class="feature-item"><div class="icon-box"><span class="material-icons">public</span></div><h3>Global Access</h3><p>NO BORDERS</p></div>
+        <div class="feature-item"><div class="icon-box"><span class="material-icons">schedule</span></div><h3>Daily Flow</h3><p>CONTINUOUS EARNINGS</p></div>
+        <div class="feature-item"><div class="icon-box"><span class="material-icons">lock</span></div><h3>Secure</h3><p>TRUSTED PLATFORM</p></div>
+    </section>
+
+    <section class="vision-section" id="vision">
+        <p class="section-label">OUR VISION</p>
+        <h2>Turning entertainment into income for everyday digital creators.</h2>
+        <div class="vision-content">
+            <p>Stream is built on one powerful vision: to turn entertainment
+                 into income for everyday Africans and digital creators around the world.</p>
+                 <div class="image-wrapper" onclick="toggleBlur(this)">
+                <img src="WhatsApp Image 2026-01-24 at 6.32.34 PM.jpeg" alt="Audio Collab" class="blur-img">
+                <div class="tap-overlay">Tap to view clearly</div>
+        </div>
+    </section>
+
+    <section class="ecosystem-header">
+        <h2 class="eco-title">Earning Ecosystem</h2>
+        <div class="green-divider"></div>
+        <p class="eco-subtext">A comprehensive suite of tools designed to monetize digital engagement through multiple high-value streams.</p>
+    </section>
+
+    <div id="collab-container">
+        <section class="collab-section">
+            <div class="collab-icon-box"><span class="material-icons">music_note</span></div>
+            <h2>Audio Collaboration</h2>
+            <div class="earnings-badge"><span class="label">Potential Earnings:</span> <span class="value">$1.5 (₦1,550)</span></div>
+            <p class="collab-desc">Audio Collab allows Streamers to collaborate directly with artists, record labels, and music distributors by engaging with official audio content.</p>
+            <div class="image-wrapper" onclick="toggleBlur(this)">
+                <img src="WhatsApp Image 2026-01-24 at 6.35.41 PM.jpeg" alt="Audio Collab" class="blur-img">
+                <div class="tap-overlay">Tap to view clearly</div>
+            </div>
+        </section>
+    </div>
+
+    <section class="registration-section">
+        <div class="reg-icon-box"><span class="material-icons">check_circle</span></div>
+        <h2 class="reg-title">Officially Registered & Verified</h2>
+        <div class="reg-content">
+            <p>STREAM AFRICA is fully registered and certified with the Corporate Affairs Commission (CAC) of Nigeria (BN 9093054). We operate with transparency, responsibility, and integrity.</p>
+        </div>
+        <div class="trust-badge">THE BRAND YOU CAN TRUST 💎</div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="faq-intro">
+            <h2 class="faq-main-title">Frequently Asked Questions</h2>
+            <p class="faq-main-subtitle">Common inquiries about the platform and operations.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is the core concept of STREAM?</span>
+                    <span class="material-icons chevron">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-inner">
+                        <p>The core concept is to monetize digital engagement, turning content consumption into a collaborative earning stream for creators and users alike.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is Stream Africa a legitimate entity?</span>
+                    <span class="material-icons chevron">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-inner">
+                        <p>Yes, Stream Africa is a fully registered entity with the Corporate Affairs Commission (CAC) of Nigeria (BN 9093054), ensuring transparency and legal compliance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What are the primary income channels?</span>
+                    <span class="material-icons chevron">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-inner">
+                        <p>Primary channels include Audio/Video Collaboration, Digital Asset Downloads, TikTok Creators Network, and the Stream Bazaar Marketplace.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is the onboarding requirements?</span>
+                    <span class="material-icons chevron">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-inner">
+                        <p>Onboarding requires a valid registration on the platform, a digital wallet for earnings, and a commitment to engaging with brand collaboration tasks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Is the platform accessible globally?</span>
+                    <span class="material-icons chevron">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-inner">
+                        <p>Yes, STREAM AFRICA operates without borders. The platform is designed for a global audience, allowing users from any location to participate and earn without restriction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How does the User Trigger feature work?</span>
+                    <span class="material-icons chevron">expand_more</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-inner">
+                        <p>The User Trigger feature automates engagement alerts, allowing users to respond to high-value collaboration opportunities in real-time to maximize earnings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+    <div class="footer-brand">
+        <div class="footer-logo">
+            <div class="logo-icon"><img src="logo.png.png" width="20px" alt=""></div> 
+            <span class="brand-name">Stream</span>
+        </div>
+        <p class="footer-desc">
+            Life in Motion. Income in Continuous Flow. We are a fully registered and certified digital earning platform designed for the modern economy.
+        </p>
+        <div class="social-icons">
+            <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/company/yourhandle" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><a href="/refunds">Refund Policy</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-contact">
+        <h3>Contact</h3>
+        <div class="contact-item">
+            <span class="material-icons">mail_outline</span>
+            <a href="mailto:support@streamafrica.com">support@streamafrica.com</a>
+        </div>
+        <div class="contact-item">
+            <span class="material-icons">location_on</span>
+            <span>Lagos, Nigeria</span>
+        </div>
+        <div class="contact-item">
+            <span class="material-icons">verified</span>
+            <span>CAC: BN 9093054</span>
+        </div>
+    </div>
+</footer>
+
+<div id="notification-toast" class="notification-toast">
+    <div class="notif-icon"><span class="material-icons">verified</span></div>
+    <div class="notif-content">
+        <p id="notif-text">Someone just registered</p>
+        <span class="notif-time">Just now</span>
+    </div>
+</div>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        function toggleBlur(element) {
+            const img = element.querySelector('img');
+            img.classList.toggle('clear');
+            element.querySelector('.tap-overlay').style.display = img.classList.contains('clear') ? 'none' : 'block';
+        }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        const sections = [
+    { title: "Video Collaboration", icon: "videocam", img: "WhatsApp Image 2026-01-24 at 7.04.03 PM.jpeg" },
+    { title: "Visual and Design Collab", icon: "palette", img: "WhatsApp Image 2026-01-24 at 7.05.41 PM.jpeg" },
+    { title: "Digital and Asset Downloads", icon: "file_download", img: "WhatsApp Image 2026-01-24 at 7.08.17 PM.jpeg" },
+    { title: "Live Stream Ecosystem", icon: "sensors", img: "WhatsApp Image 2026-01-24 at 7.09.57 PM.jpeg" },
+    { title: "TikTok Creators Network", icon: "share", img: "WhatsApp Image 2026-01-24 at 7.11.24 PM.jpeg" },
+    { title: "WishHub Reward", icon: "card_giftcard", img: "WhatsApp Image 2026-01-24 at 7.12.49 PM.jpeg" },
+    { title: "Stream Bazaar Marketplace", icon: "shopping_bag", img: "WhatsApp Image 2026-01-24 at 7.46.58 PM.jpeg" },
+    { title: "Professional Skill Development", icon: "psychology", img: "WhatsApp Image 2026-01-24 at 7.48.21 PM.jpeg" }
+];
+
+       const container = document.getElementById('collab-container');
+
+sections.forEach(item => {
+    container.innerHTML += `
+        <section class="collab-section">
+            <div class="collab-icon-box"><span class="material-icons">${item.icon}</span></div>
+            <h2>${item.title}</h2>
+            <div class="earnings-badge">
+                <span class="label">Potential Earnings:</span> 
+                <span class="value">$1.5 (₦1,550)</span>
+            </div>
+            <p class="collab-desc">Engage with ${item.title} to grow your presence and earn through the Stream ecosystem.</p>
+            
+            <div class="image-wrapper" onclick="toggleBlur(this)">
+                <img src="${item.img}" class="blur-img">
+                <div class="tap-overlay">Tap to view clearly</div>
+            </div>
+        </section>`;
+});
+    </script>
+
+    <script>
+        const names = ["Emeka", "Sarah", "Olamide", "Blessing", "Chidi", "Fatima", "Kweku", "Zainab", "Tunde", "Amina", "Ngozi","Esosa","Isaac"];
+const locations = ["Lagos", "Accra", "Abuja", "Nairobi", "Port Harcourt", "Johannesburg", "Uyo", "kano", "Imo", "Enugu", "Bayalsa","Kaduna"];
+
+function showNotification() {
+    const toast = document.getElementById('notification-toast');
+    const text = document.getElementById('notif-text');
+    
+    // Pick random data
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    const randomLoc = locations[Math.floor(Math.random() * locations.length)];
+    
+    text.innerHTML = `${randomName} from ${randomLoc} <span style="color:var(--accent-green)">registered to Stream</span>`;
+    
+    // Show toast
+    toast.classList.add('show');
+    
+    // Hide toast after 5 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 5000);
+}
+
+// Start the loop: Show first one after 4 seconds, then repeat every 12 seconds
+setTimeout(() => {
+    showNotification();
+    setInterval(showNotification, 12000); 
+}, 4000);
+    </script>
+</body>
+</html>

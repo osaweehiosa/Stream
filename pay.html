@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earning Hub</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="user-info">
+                <h2 id="greeting">Hello, User 👋</h2>
+                <p class="status">Status: <span>Demo Mode</span></p>
+            </div>
+            <div class="profile-circle" id="profileInitials">U</div>
+        </header>
+
+        <div class="ticker-wrap">
+            <div class="ticker" id="withdrawalTicker"></div>
+        </div>
+
+        <div class="balance-card">
+            <p>Total Balance</p>
+            <h1>₦ 0.00</h1>
+            <div class="action-buttons">
+                <button class="btn btn-topup" onclick="showPopup()">Top Up</button>
+                <button class="btn btn-withdraw" onclick="showPopup()">Withdraw</button>
+            </div>
+        </div>
+
+        <section class="earning-hub">
+            <div class="section-header">
+                <h3>Earning Hub</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="grid">
+                <div class="card" onclick="showPopup()">
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                    <div class="icon-box music"><i class="fa-solid fa-music"></i></div>
+                    <h4>Stream Yield</h4>
+                    <p>Earn from music</p>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                    <div class="icon-box tiktok"><i class="fa-solid fa-video"></i></div>
+                    <h4>TCN Salary</h4>
+                    <p>TikTok Earnings</p>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                    <div class="icon-box bazaar"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <h4>Bazaar</h4>
+                    <p>Sell Products</p>
+                </div>
+                <div class="card" onclick="showPopup()">
+                    <i class="fa-solid fa-lock lock-icon"></i>
+                    <div class="icon-box academy"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h4>Academy</h4>
+                    <p>Learn Skills</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="daily-activity">
+            <div class="activity-card" onclick="showPopup()">
+                <h3>Daily Activity</h3>
+                <div class="activity-content">
+                    <div class="progress-container">
+                        <svg class="progress-ring" width="70" height="70">
+                            <circle class="progress-ring__background" stroke="#1a2235" stroke-width="5" fill="transparent" r="30" cx="35" cy="35"/>
+                            <circle class="progress-ring__circle" stroke="#50b487" stroke-width="5" fill="transparent" r="30" cx="35" cy="35"/>
+                        </svg>
+                        <div class="progress-text">0%</div>
+                    </div>
+                    <div class="task-info">
+                        <p class="task-label">Task Progress</p>
+                        <p class="task-count">0 / 5 Tasks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="invite-section">
+            <div class="invite-card" onclick="showPopup()">
+                <div class="invite-text">
+                    <h3 class="green-title">Invite Friends</h3>
+                    <p>Earn ₦5,000 per invite</p>
+                </div>
+                <div class="share-icon-box">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </div>
+            </div>
+        </section>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="location.href='index.html';"><i class="fa-solid fa-house"></i><span>Home</span></div>
+            <div class="nav-item" onclick="showPopup()"><i class="fa-solid fa-circle-dollar-to-slot"></i><span>Earn</span></div>
+            <div class="nav-item" onclick="showPopup()"><i class="fa-solid fa-bag-shopping"></i><span>Bazaar</span></div>
+            <div class="nav-item" onclick="showPopup()"><i class="fa-solid fa-graduation-cap"></i><span>Academy</span></div>
+            <div class="nav-item" onclick="showPopup()"><i class="fa-solid fa-user"></i><span>Profile</span></div>
+        </nav>
+    </div>
+
+    <div id="activationModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div class="modal-icon-container">
+                <div class="lock-circle"><i class="fa-solid fa-lock"></i></div>
+            </div>
+            <h2 class="modal-title">Activate Lifetime Access</h2>
+            <p class="modal-description">
+                You are currently in Demo Mode. To unlock earning features, withdraw funds, and access the Bazaar, please complete your one-time activation.
+            </p>
+            <button class="btn-activate" onclick="goToActivation()">Activate Now - ₦12,000</button>
+        </div>
+    </div>
+
+    <div id="notification-container"></div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
