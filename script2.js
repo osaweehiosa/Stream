@@ -43,7 +43,7 @@ function closePopup() {
 
 function goToActivation() {
     // This sends the user to the next page
-    window.location.href = "tran.html";
+    window.location.href = "tran.html.html";
 }
 
 // 4. Random Notifications
