@@ -24,7 +24,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
     // Simulate sending data
     setTimeout(() => {
-        alert("Account Created! Redirecting to Payment Gateway...");
+        alert("Account Created! Welcome to Stream...");
          window.location.href = "pay.html.html"; 
     }, 1200);
 });
